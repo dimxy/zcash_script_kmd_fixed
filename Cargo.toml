@@ -8,7 +8,7 @@ build = "build.rs"
 edition = "2018"
 description = "ffi bindings to zcashd's zcash_script library"
 documentation = "https://docs.rs/zcash_script"
-repository = "https://github.com/ZcashFoundation/zcash_script"
+repository = "https://github.com/dimxy/zcash_script_kmd_fixed"
 include = [
     "Cargo.toml",
     "/LICENSE",
@@ -37,6 +37,7 @@ include = [
     "/depend/zcash/src/secp256k1",
     "/depend/zcash/src/support/cleanse.cpp",
     "/depend/zcash/src/support/cleanse.h",
+    "/depend/zcash/src/amount.h",
 ]
 
 [lib]
