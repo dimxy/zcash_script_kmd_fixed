@@ -93,6 +93,7 @@ fn main() -> Result<()> {
         .file("depend/zcash/src/script/script.cpp")
         .file("depend/zcash/src/script/script_error.cpp")
         .file("depend/zcash/src/support/cleanse.cpp")
+        .file("depend/zcash/src/support/amount.cpp")
         .compile("libzcash_script.a");
 
     Ok(())
