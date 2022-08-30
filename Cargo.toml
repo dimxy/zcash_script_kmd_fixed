@@ -57,7 +57,8 @@ rand_core = "0.6"
 tracing = "0.1"
 zcash_encoding = "0.1"
 zcash_note_encryption = "0.1"
-zcash_primitives = { version = "0.6", features = ["transparent-inputs"] }
+# zcash_primitives = { version = "0.6", features = ["transparent-inputs"] }
+zcash_primitives = { git = "https://github.com/dimxy/librustzcash.git", branch = "main"  }
 
 [build-dependencies]
 cc = { version = ">= 1.0.36", features = ["parallel"] }
