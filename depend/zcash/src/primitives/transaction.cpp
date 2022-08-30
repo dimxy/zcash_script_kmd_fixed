@@ -267,7 +267,7 @@ CAmount CTransaction::GetValueOut() const
     for (std::vector<CTxOut>::const_iterator it(vout.begin()); it != vout.end(); ++it)
     {
         if (!MoneyRange(it->nValue)) {
-            throw std::runtime_error("CTransaction::GetValueOut(): nValue out of range");
+            throw std::runtime_error("CTransaction::GetValueOut(): nValue out of range 0");
         }
         nValueOut += it->nValue;
         if (!MoneyRange(nValueOut)) {
@@ -283,7 +283,7 @@ CAmount CTransaction::GetValueOut() const
         nValueOut += -valueBalanceSapling;
 
         if (!MoneyRange(nValueOut)) {
-            throw std::runtime_error("CTransaction::GetValueOut(): value out of range");
+            throw std::runtime_error("CTransaction::GetValueOut(): value out of range 1");
         }
     }
 
@@ -296,7 +296,7 @@ CAmount CTransaction::GetValueOut() const
         nValueOut += -valueBalanceOrchard;
 
         if (!MoneyRange(nValueOut)) {
-            throw std::runtime_error("CTransaction::GetValueOut(): value out of range");
+            throw std::runtime_error("CTransaction::GetValueOut(): value out of range 2");
         }
     }
 
@@ -308,7 +308,7 @@ CAmount CTransaction::GetValueOut() const
         }
         nValueOut += it->vpub_old;
         if (!MoneyRange(nValueOut)) {
-            throw std::runtime_error("CTransaction::GetValueOut(): value out of range");
+            throw std::runtime_error("CTransaction::GetValueOut(): value out of range 3");
         }
     }
     return nValueOut;
@@ -326,7 +326,7 @@ CAmount CTransaction::GetShieldedValueIn() const
         nValue += valueBalanceSapling;
 
         if (!MoneyRange(nValue)) {
-            throw std::runtime_error("CTransaction::GetShieldedValueIn(): value out of range");
+            throw std::runtime_error("CTransaction::GetShieldedValueIn(): value out of range 4");
         }
     }
 
@@ -338,7 +338,7 @@ CAmount CTransaction::GetShieldedValueIn() const
         }
         nValue += valueBalanceOrchard;
         if (!MoneyRange(nValue)) {
-            throw std::runtime_error("CTransaction::GetShieldedValueIn(): nValue out of range");
+            throw std::runtime_error("CTransaction::GetShieldedValueIn(): nValue out of range 5");
         }
     }
 
@@ -346,11 +346,11 @@ CAmount CTransaction::GetShieldedValueIn() const
     {
         // NB: vpub_new "gives" money to the transparent value pool just as inputs do
         if (!MoneyRange(it->vpub_new)) {
-            throw std::runtime_error("CTransaction::GetShieldedValueIn(): vpub_new out of range");
+            throw std::runtime_error("CTransaction::GetShieldedValueIn(): vpub_new out of range 6");
         }
         nValue += it->vpub_new;
         if (!MoneyRange(nValue)) {
-            throw std::runtime_error("CTransaction::GetShieldedValueIn(): value out of range");
+            throw std::runtime_error("CTransaction::GetShieldedValueIn(): value out of range 7");
         }
     }
 
