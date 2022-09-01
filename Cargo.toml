@@ -58,7 +58,7 @@ tracing = "0.1"
 zcash_encoding = "0.1"
 zcash_note_encryption = "0.1"
 # zcash_primitives = { version = "0.6", features = ["transparent-inputs"] }
-zcash_primitives = { git = "https://github.com/dimxy/librustzcash.git", branch = "0.6-kmd"  }
+zcash_primitives = { git = "https://github.com/dimxy/librustzcash.git", branch = "0.6-kmd", features = ["transparent-inputs"]  }
 
 [build-dependencies]
 cc = { version = ">= 1.0.36", features = ["parallel"] }
